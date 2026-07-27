@@ -16,8 +16,15 @@ let userSelectedDate = null;
 let timer = null;
 
 startBtn.addEventListener('click', () => {
+
+
+  if (timer !== null) {
+    clearInterval(timer);
+  }
+
   if (!userSelectedDate) return;
   input.disabled = true;
+  startBtn.disabled = true;
   
   timer = setInterval(() => {
     const timeNow = Date.now();
